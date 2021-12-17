@@ -1,12 +1,10 @@
 <template>
 
-    <div>
-        <div class="box">
-            <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="immagine 1">
-            <p>aaa</p>
-            <p>bbb</p>
-            <p>ccc</p>
-        </div>
+    <div class="card">
+        <img :src="info.poster" :alt="info.title">
+        <p class="white">{{info.title}}</p>
+        <p class="gray">{{info.author}}</p>
+        <p class="gray">{{info.year}}</p>
     </div>
     
     
@@ -16,18 +14,42 @@
 
 <script>
 export default {
-    name: "Card"
+    name: "Card",
+    props: {
+        info: Object
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-
-
-    .box{
-        background-color: #2e3a46;
-        
-        img{
-            width: 100%;
-        }
+@import "../../assets/style/variabili.scss";
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
+        
+ 
+    img{
+        width: 80%;
+        padding: 20px 0;
+    }
+
+    .white{
+        color: $white;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 20px 0;
+        text-transform: uppercase;
+        padding: 0 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        }
+
+    .gray{
+        color: $gray;
+    }        
+
+   
 </style>
